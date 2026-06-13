@@ -1,234 +1,378 @@
-/* --- RESET & BASIC STYLES --- */
+/* --- RESET & BASE STYLES --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
 }
 
+:root {
+    --coklat-tua: #4A3525;
+    --cream: #FDFBF7;
+    --cream-alt: #F4EFE6;
+    --nude: #D4A373;
+    --hitam: #1A1A1A;
+    --putih: #FFFFFF;
+}
+
 body {
-    color: #333;
-    background-color: #fcf9f5; /* Warna cream hangat */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--hitam);
     line-height: 1.6;
 }
 
-/* --- NAVBAR --- */
+h1, h2, h3, .brand-name {
+    font-family: 'Playfair Display', serif;
+    color: var(--coklat-tua);
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+/* --- NAVIGATION BAR --- */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(74, 53, 37, 0.05);
     z-index: 1000;
 }
 
-.navbar {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 85%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
-    color: #d35400; /* Oranye Kuliner */
-}
-
-.logo span {
-    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-}
-
-.nav-links li {
-    margin-left: 20px;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #555;
-    font-weight: 600;
+    color: var(--coklat-tua);
+    font-weight: 500;
+    font-size: 15px;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #d35400;
+    color: var(--nude);
 }
 
-/* --- HERO SECTION --- */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200') no-repeat center center/cover;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
+/* --- SECTION 1: HOME (Hero & Profile) --- */
+#home {
+    padding-top: 140px;
+    background: linear-gradient(180deg, var(--cream-alt) 0%, var(--cream) 100%);
+}
+
+.hero-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
     align-items: center;
-    text-align: center;
-    color: #fff;
-    padding: 0 20px;
+    margin-bottom: 60px;
 }
 
-.hero-content h1 {
+.hero-text h1 {
     font-size: 48px;
     margin-bottom: 20px;
-    font-weight: 800;
+    line-height: 1.2;
 }
 
-.hero-content p {
-    font-size: 20px;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
+.hero-text p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
 }
 
-.btn-primary {
-    background-color: #e67e22;
-    color: #fff;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: background 0.3s;
-}
-
-.btn-primary:hover {
-    background-color: #d35400;
-}
-
-/* --- ABOUT SECTION --- */
-.about-section, .gallery-section, .support-section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
+/* Ilustrasi Estetik Cafe & Fashion (CSS Art) */
+.hero-image-placeholder {
+    background-color: var(--cream-alt);
+    border: 2px solid var(--coklat-tua);
+    border-radius: 50px 50px 0 0;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    color: #2c3e50;
+    overflow: hidden;
+    box-shadow: 10px 10px 0px var(--nude);
 }
 
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #e67e22;
-    margin: 10px auto 0 auto;
-    border-radius: 2px;
+.hero-image-placeholder::before {
+    content: "☕ × 🍕 × ✦";
+    font-size: 32px;
+    color: var(--nude);
+    margin-bottom: 10px;
 }
 
-.about-grid {
+.hero-image-placeholder::after {
+    content: "Alta Agency Portfolio Piece";
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--coklat-tua);
+}
+
+/* Visi Misi */
+.vision-mission {
+    margin-top: 80px;
+    background-color: var(--putih);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--cream-alt);
+    box-shadow: 0 5px 20px rgba(74, 53, 37, 0.02);
+}
+
+.vision-mission h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.vm-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
-.about-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.about-card h3 {
+.vm-item h3 {
+    font-size: 22px;
     margin-bottom: 15px;
-    color: #e67e22;
+    color: var(--nude);
+    border-bottom: 2px solid var(--cream-alt);
+    padding-bottom: 5px;
 }
 
-/* --- GALLERY SECTION --- */
-.gallery-grid {
+.vm-item ul {
+    padding-left: 20px;
+}
+
+.vm-item li {
+    margin-bottom: 10px;
+}
+
+/* --- SECTION 2: AGENCY --- */
+#agency {
+    background-color: var(--cream-alt);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+/* Value Team */
+.values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.03);
-}
-
-/* --- SUPPORT FORM --- */
-.support-section {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     margin-bottom: 80px;
 }
 
-.support-form {
-    max-width: 600px;
-    margin: 30px auto 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.support-form input, .support-form textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #fdfdfd;
-}
-
-.support-form input:focus, .support-form textarea:focus {
-    outline: none;
-    border-color: #e67e22;
-}
-
-.btn-submit {
-    background-color: #2c3e50;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.btn-submit:hover {
-    background-color: #1a252f;
-}
-
-/* --- FOOTER --- */
-footer {
-    background-color: #2c3e50;
-    color: #fff;
+.value-card {
+    background-color: var(--putih);
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
-    padding: 20px;
+    transition: transform 0.3s;
+    border-bottom: 4px solid var(--coklat-tua);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Our Services */
+.services-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background-color: var(--coklat-tua);
+    color: var(--cream);
+    padding: 30px;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+}
+
+.service-card:hover {
+    background-color: var(--hitam);
+}
+
+.service-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--nude);
+}
+
+.service-card p {
     font-size: 14px;
+    opacity: 0.9;
+    text-align: justify;
+}
+
+/* --- SECTION 3: CAMPAIGN --- */
+#campaign {
+    background-color: var(--putih);
+    text-align: center;
+}
+
+.campaign-hero {
+    background-color: var(--cream-alt);
+    padding: 60px 40px;
+    border-radius: 30px;
+    margin-bottom: 60px;
+    border: 1px dashed var(--coklat-tua);
+}
+
+.campaign-hero h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--nude);
+    letter-spacing: 1px;
+}
+
+.campaign-desc {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Campaign Objectives */
+.objectives-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: left;
+}
+
+.obj-card {
+    background-color: var(--cream);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid var(--nude);
+}
+
+.obj-card h4 {
+    font-size: 18px;
+    color: var(--coklat-tua);
+    margin-bottom: 10px;
+}
+
+.obj-card p {
+    font-size: 14px;
+}
+
+/* --- SECTION 4: CONTACT US & FOOTER --- */
+#contact {
+    background-color: var(--hitam);
+    color: var(--cream);
+    text-align: center;
+    padding: 60px 0;
+}
+
+#contact h2 {
+    color: var(--cream);
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    font-size: 18px;
+}
+
+.contact-item a {
+    color: var(--nude);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--cream);
+}
+
+footer {
+    background-color: #111111;
+    color: #777;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 13px;
+    border-top: 1px solid #222;
 }
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
-    .navbar {
+    .hero-wrapper, .vm-grid, .values-grid, .objectives-grid {
+        grid-template-columns: 1fr;
+    }
+    nav {
         flex-direction: column;
         gap: 15px;
     }
-    .nav-links li {
-        margin: 0 10px;
+    .hero-text h1 {
+        font-size: 36px;
     }
-    .hero-content h1 {
+    .campaign-hero h2 {
         font-size: 32px;
     }
 }
