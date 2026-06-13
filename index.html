@@ -3,71 +3,530 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kampanye Kuliner Nusantara</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Alta Agency x Kedai Kita Bintaro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --coklat-tua: #4A3525;
+            --cream: #FDFBF7;
+            --cream-alt: #F4EFE6;
+            --nude: #D4A373;
+            --hitam: #1A1A1A;
+            --putih: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--hitam);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand-name {
+            font-family: 'Playfair Display', serif;
+            color: var(--coklat-tua);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(74, 53, 37, 0.05);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--coklat-tua);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--nude);
+        }
+
+        /* --- SECTION 1: HOME (Hero & Profile) --- */
+        #home {
+            padding-top: 140px;
+            background: linear-gradient(180deg, var(--cream-alt) 0%, var(--cream) 100%);
+        }
+
+        .hero-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Ilustrasi Estetik Cafe & Fashion (CSS Art) */
+        .hero-image-placeholder {
+            background-color: var(--cream-alt);
+            border: 2px solid var(--coklat-tua);
+            border-radius: 50px 50px 0 0;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 10px 10px 0px var(--nude);
+        }
+
+        .hero-image-placeholder::before {
+            content: "☕ × 🍕 × ✦";
+            font-size: 32px;
+            color: var(--nude);
+            margin-bottom: 10px;
+        }
+
+        .hero-image-placeholder::after {
+            content: "Alta Agency Portfolio Piece";
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--coklat-tua);
+        }
+
+        /* Visi Misi */
+        .vision-mission {
+            margin-top: 80px;
+            background-color: var(--putih);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--cream-alt);
+            box-shadow: 0 5px 20px rgba(74, 53, 37, 0.02);
+        }
+
+        .vision-mission h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .vm-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--nude);
+            border-bottom: 2px solid var(--cream-alt);
+            padding-bottom: 5px;
+        }
+
+        .vm-item ul {
+            padding-left: 20px;
+        }
+
+        .vm-item li {
+            margin-bottom: 10px;
+        }
+
+        /* --- SECTION 2: AGENCY --- */
+        #agency {
+            background-color: var(--cream-alt);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        /* Value Team */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .value-card {
+            background-color: var(--putih);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-bottom: 4px solid var(--coklat-tua);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Our Services */
+        .services-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: var(--coklat-tua);
+            color: var(--cream);
+            padding: 30px;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .service-card:hover {
+            background-color: var(--hitam);
+        }
+
+        .service-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--nude);
+        }
+
+        .service-card p {
+            font-size: 14px;
+            opacity: 0.9;
+            text-align: justify;
+        }
+
+        /* --- SECTION 3: CAMPAIGN --- */
+        #campaign {
+            background-color: var(--putih);
+            text-align: center;
+        }
+
+        .campaign-hero {
+            background-color: var(--cream-alt);
+            padding: 60px 40px;
+            border-radius: 30px;
+            margin-bottom: 60px;
+            border: 1px dashed var(--coklat-tua);
+        }
+
+        .campaign-hero h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--nude);
+            letter-spacing: 1px;
+        }
+
+        .campaign-desc {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Campaign Objectives */
+        .objectives-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            text-align: left;
+        }
+
+        .obj-card {
+            background-color: var(--cream);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--nude);
+        }
+
+        .obj-card h4 {
+            font-size: 18px;
+            color: var(--coklat-tua);
+            margin-bottom: 10px;
+        }
+
+        .obj-card p {
+            font-size: 14px;
+        }
+
+        /* --- SECTION 4: CONTACT US & FOOTER --- */
+        #contact {
+            background-color: var(--hitam);
+            color: var(--cream);
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        #contact h2 {
+            color: var(--cream);
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            font-size: 18px;
+        }
+
+        .contact-item a {
+            color: var(--nude);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--cream);
+        }
+
+        footer {
+            background-color: #111111;
+            color: #777;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+            border-top: 1px solid #222;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .hero-wrapper, .vm-grid, .values-grid, .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            .campaign-hero h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <nav class="navbar">
-            <div class="logo">Rasakan<span>Kampanye</span></div>
+        <nav>
+            <div class="logo">ALTA<span style="color: var(--nude);">AGENCY</span></div>
             <ul class="nav-links">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang Kami</a></li>
-                <li><a href="#gallery">Galeri</a></li>
-                <li><a href="#support">Dukung</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#agency">Agency</a></li>
+                <li><a href="#campaign">Campaign</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Lestarikan Rasa, Cintai Kuliner Lokal</h1>
-            <p>Bergabunglah bersama kami dalam menjaga tradisi dan mendukung UMKM kuliner di seluruh penjuru negeri.</p>
-            <a href="#support" class="btn-primary">Ikut Mendukung</a>
+    <section id="home">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-text">
+                    <h1>Kedai Kita Bintaro</h1>
+                    <p>Kedai Kita Bintaro adalah restoran keluarga di kawasan Bintaro Jaya, Tangerang Selatan, yang menghadirkan pengalaman kuliner dengan suasana nyaman, hangat, dan modern. Menyajikan berbagai menu favorit seperti pizza kayu bakar dan mi hot plate, Kedai Kita Bintaro menjadi pilihan tepat untuk makan bersama keluarga, teman, maupun komunitas. Dengan konsep yang estetik dan ramah untuk berbagai aktivitas, kami berkomitmen menciptakan momen kebersamaan yang berkesan bagi setiap pengunjung.</p>
+                </div>
+                <div class="hero-image-placeholder"></div>
+            </div>
+
+            <div class="vision-mission">
+                <h2>Visi & Misi</h2>
+                <div class="vm-grid">
+                    <div class="vm-item">
+                        <h3>Visi</h3>
+                        <p>Menjadi restoran keluarga dan ruang berkumpul pilihan di Bintaro yang menghadirkan kuliner berkualitas, suasana nyaman, serta mendukung interaksi sosial dan gaya hidup modern.</p>
+                    </div>
+                    <div class="vm-item">
+                        <h3>Misi</h3>
+                        <ul>
+                            <li>Menyajikan makanan dan minuman berkualitas dengan cita rasa khas untuk semua kalangan.</li>
+                            <li>Menciptakan suasana yang nyaman, estetik, dan ramah bagi keluarga, teman, komunitas, serta generasi muda.</li>
+                            <li>Menjadi tempat berkumpul yang mempererat hubungan sosial dan menciptakan pengalaman yang berkesan bagi setiap pengunjung.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="about-section">
-        <h2>Misi Kampanye Kami</h2>
-        <div class="about-grid">
-            <div class="about-card">
-                <h3>Edukasi Budaya</h3>
-                <p>Mengenalkan sejarah dan filosofi di balik setiap hidangan tradisional kepada generasi muda.</p>
+    <section id="agency">
+        <div class="container">
+            <h2 class="section-title">Our Agency Inside</h2>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Profesional</h3>
+                    <p>Mengutamakan penyampaian kreatif namun diikuti dengan eksekusi jasa yang serius.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Collaborative</h3>
+                    <p>Menjadi partner kerja yang responsive terhadap client atau pun audience secara transparan, adaptive, dan berempati.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Fun</h3>
+                    <p>Bertemakan seru, menyenangkan, dan trendy.</p>
+                </div>
             </div>
-            <div class="about-card">
-                <h3>Dukungan UMKM</h3>
-                <p>Membantu pelaku usaha kuliner lokal agar mampu bersaing di era digital.</p>
-            </div>
-            <div class="about-card">
-                <h3>Ketahanan Pangan</h3>
-                <p>Mendorong penggunaan bahan baku lokal yang segar, sehat, dan berkelanjutan.</p>
+
+            <h3 class="services-title">Our Services</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>Media Relations & Press Handling</h4>
+                    <p>Mengelola hubungan dengan media, membuat press release, dan memastikan brand selalu mendapat liputan positif.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Creative Campaign Development</h4>
+                    <p>Merancang kampanye PR yang kreatif dan trendy, termasuk social media challenge, event tematik, atau kolaborasi dengan influencer.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Brand Storytelling & Content Creation</h4>
+                    <p>Membuat narasi brand yang kuat lewat artikel, video, konten, desain visual, dan storytelling yang relevan dengan audiens.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Event Management & Activation</h4>
+                    <p>Menyelenggarakan event promosi, peluncuran produk, atau CSR dengan konsep yang fun dan engaging dan tentunya kreatif.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Crisis Communication & Reputation Management</h4>
+                    <p>Menangani isu atau krisis komunikasi dengan strategi yang cepat, transparan, dan menjaga reputasi brand tetap positif.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="gallery-section">
-        <h2>Keberagaman Rasa</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500" alt="Kuliner 1"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500" alt="Kuliner 2"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500" alt="Kuliner 3"></div>
+    <section id="campaign">
+        <div class="container">
+            <div class="campaign-hero">
+                <h2>Show Your Style X Kedai Kita</h2>
+                <div class="tagline">Your Style, Your Story</div>
+            </div>
+
+            <div class="campaign-desc">
+                <p style="margin-bottom: 20px;"><strong>Show Your Style x Kedai Kita</strong> adalah kampanye media sosial yang mengajak pengunjung untuk mengekspresikan gaya dan kepercayaan diri mereka saat berkunjung ke Kedai Kita Bintaro. Kampanye ini ditujukan khususnya bagi Generasi Z dan Milenial yang aktif menggunakan media sosial.</p>
+                <p style="margin-bottom: 20px;">Peserta cukup mengunggah foto atau video OOTD (Outfit of The Day) di Instagram Story, kemudian menandai akun Instagram resmi Kedai Kita Bintaro dan menggunakan hashtag kampanye yang telah ditentukan. Melalui partisipasi ini, pengunjung turut menciptakan konten yang membantu memperluas jangkauan promosi Kedai Kita Bintaro secara organik.</p>
+                <p style="margin-bottom: 20px;">Kampanye ini bertujuan untuk meningkatkan brand awareness, memperkuat engagement pelanggan, serta memperkenalkan Kedai Kita Bintaro sebagai destinasi kuliner yang nyaman, estetik, dan dekat dengan gaya hidup anak muda. Selain itu, peserta dengan unggahan paling kreatif berkesempatan mendapatkan hadiah atau voucher menarik dari Kedai Kita Bintaro.</p>
+                <p>Dengan menggabungkan unsur fashion, media sosial, dan pengalaman kuliner, Show Your Style x Kedai Kita hadir untuk menciptakan pengalaman yang seru, interaktif, dan berkesan bagi setiap pengunjung.</p>
+            </div>
+
+            <h3 class="objectives-title">Campaign Objective</h3>
+            <div class="objectives-grid">
+                <div class="obj-card">
+                    <h4>a. Informational Objectives</h4>
+                    <p>Meningkatkan brand awareness Kedai Kita Bintaro di kalangan perempuan Generasi Z dan Milenial sebagai restoran dengan kuliner berkualitas, suasana nyaman, estetik, dan cocok untuk bersosialisasi serta berbagi momen di media sociais.</p>
+                </div>
+                <div class="obj-card">
+                    <h4>b. Motivational Objectives</h4>
+                    <p>Mendorong pengunjung untuk berpartisipasi dalam kampanye dengan mengunggah OOTD di Instagram Story, menandai akun Kedai Kita Bintaro, dan menggunakan hashtag kampanye. Selain itu, kampanye ini bertujuan meningkatkan kepercayaan diri audiens dalam mengekspresikan gaya personal mereka.</p>
+                </div>
+                <div class="obj-card">
+                    <h4>c. Measurable Objectives</h4>
+                    <p>Menargetkan 10–15 peserta sesuai target audiens serta meningkatkan interaksi dan eksposur Kedai Kita Bintaro di media sosial. Keberhasilan kampanye diukur melalui jumlah peserta, tingkat partisipasi, dan engagement yang dihasilkan selama kampanye berlangsung.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="support" class="support-section">
-        <h2>Suarakan Dukunganmu</h2>
-        <p>Isi formulir di bawah ini untuk menjadi bagian dari pergerakan kuliner lokal!</p>
-        <form class="support-form">
-            <input type="text" placeholder="Nama Lengkap" required>
-            <input type="email" placeholder="Email Aktif" required>
-            <textarea placeholder="Pesan atau Harapanmu untuk Kuliner Indonesia" rows="5" required></textarea>
-            <button type="submit" class="btn-submit">Kirim Dukungan</button>
-        </form>
+    <section id="contact">
+        <div class="container" style="padding: 20px 0;">
+            <h2>Contact Us</h2>
+            <p>Let's collaborate and create stunning stories together.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    Instagram: <a href="https://instagram.com/kedaikitabintaro" target="_blank">@kedaikitabintaro</a>
+                </div>
+                <div class="contact-item">
+                    Phone: <a href="tel:085176719901">085176719901</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Kampanye Kuliner Indonesia. Semua Hak Dilindungi.</p>
+        <p>&copy; 2026 Alta Agency. All Rights Reserved.</p>
     </footer>
 
 </body>
