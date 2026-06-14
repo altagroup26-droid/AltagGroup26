@@ -55,22 +55,20 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 10px 0; /* Padding disesuaikan agar logo pas */
 }
 
-.logo {
-    font-family: var(--font-heading);
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--cream);
+/* Styling logo baru */
+.logo-link {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    letter-spacing: 1px;
 }
 
-.logo span {
-    color: var(--accent-gold);
-    font-weight: 400;
-    font-style: italic;
+.nav-logo-img {
+    height: 45px; /* Sesuaikan ukuran logo */
+    width: auto;
+    border-radius: 4px; /* Opsional: memberi sedikit lengkungan jika logo kotak tajam */
 }
 
 .nav-menu a {
@@ -99,7 +97,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* Perpaduan Gradasi Cokelat Tua & Latar Belakang Kafe Estetik */
     background: linear-gradient(135deg, rgba(26,26,26,0.93) 0%, rgba(62,39,35,0.88) 100%), 
                 url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
@@ -215,7 +212,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* Floating Aesthetic Accents (Pizza & Fashion) */
+/* Floating Aesthetic Accents */
 .floating-accent {
     position: absolute;
     opacity: 0.15;
@@ -224,7 +221,6 @@ body {
 }
 .pizza-icon { top: 18%; left: 8%; font-size: 50px; transform: rotate(-15deg); }
 .fashion-icon { bottom: 25%; right: 8%; font-size: 50px; transform: rotate(20deg); }
-
 
 /* SECTION 2: AGENCY */
 .section-agency {
@@ -339,8 +335,7 @@ body {
     margin-bottom: 12px;
 }
 
-
-/* SECTION 3: ABOUT CAMPAIGN (FASHION GRID VIBE) */
+/* SECTION 3: ABOUT CAMPAIGN */
 .section-campaign {
     background-color: var(--black);
     color: var(--cream);
@@ -469,8 +464,51 @@ body {
     line-height: 1.6;
 }
 
+/* SECTION 4: ASSETS GALLERY (BARU) */
+.section-assets {
+    background-color: var(--soft-nude);
+    color: var(--black);
+}
 
-/* SECTION 4: CONTACT US */
+.assets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.asset-item {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(62, 39, 35, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(215, 204, 200, 0.3);
+}
+
+.asset-item:hover {
+    transform: translateY(-8px);
+}
+
+.asset-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    object-fit: contain;
+    border: 1px solid rgba(0,0,0,0.03);
+    max-height: 350px;
+}
+
+.asset-item h4 {
+    font-family: var(--font-heading);
+    color: var(--dark-brown);
+    font-size: 20px;
+}
+
+
+/* SECTION 5: CONTACT US */
 .section-contact {
     background-color: var(--dark-brown);
 }
@@ -556,7 +594,7 @@ footer {
 }
 
 
-/* RESPONSIVE LAYOUT (UNTUK MOBILE & TABLET) */
+/* RESPONSIVE LAYOUT */
 @media (max-width: 992px) {
     .value-grid, .objectives-row, .services-grid, .contact-box, .vision-mission-grid {
         grid-template-columns: 1fr;
@@ -566,5 +604,6 @@ footer {
 @media (max-width: 768px) {
     .section-hero h1 { font-size: 42px; }
     .campaign-title { font-size: 32px; }
-    .nav-menu { display: none; } /* Menyederhanakan menu pada tampilan mobile ringkas */
+    .nav-menu { display: none; } 
+    .nav-logo-img { height: 35px; } /* Memperkecil logo di mobile */
 }
