@@ -445,12 +445,13 @@ footer {
     }
 }
 /* ======================================================== */
-/* TEMPELKAN KODE CSS BARU INI DI BAGIAN PALING BAWAH     */
+/* TEMPELKAN KODE CSS BARU INI DI BAGIAN PALING BAWAH       */
 /* ======================================================== */
 
 #campaign-assets {
     background: linear-gradient(to bottom, var(--black), var(--dark-brown));
     position: relative;
+    padding: 2rem 0 4rem 0;
 }
 
 .section-sub {
@@ -465,85 +466,57 @@ footer {
 .assets-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    gap: 3rem;
 }
 
 .asset-card {
-    background-color: rgba(26, 18, 14, 0.4);
-    border: 1px solid rgba(239, 230, 221, 0.08);
+    background-color: rgba(44, 26, 17, 0.3);
+    border: 1px solid rgba(239, 230, 221, 0.1);
     padding: 1.5rem;
-    border-radius: 6px;
+    border-radius: 8px;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .asset-card:hover {
     transform: translateY(-8px);
     border-color: var(--maroon);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
-.asset-img-box {
+.asset-img-container {
     width: 100%;
-    height: 380px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 4px;
+    height: auto;
+    aspect-ratio: 9 / 16; /* Mengunci bentuk layout vertikal brochure agar tidak penyet/gepeng */
+    overflow: hidden;
+    border-radius: 6px;
     margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: inset 0 0 0 2000px rgba(13, 13, 13, 0.35); /* Dark overlay elegant */
-    border: 1px solid rgba(239, 230, 221, 0.1);
+    border: 1px solid rgba(239, 230, 221, 0.15);
+    background-color: #161616;
 }
 
-/* Menggunakan visual estetik pendukung spot cafe & makanan mewah */
-.asset-pizza {
-    background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000');
+.asset-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menampilkan flyer full dengan rapi di dalam box */
+    transition: transform 0.4s ease;
 }
 
-.asset-kedaikita {
-    background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1000');
-}
-
-.asset-mie {
-    background-image: url('https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1000');
-}
-
-/* Desain Badge/Kotak Tulisan Persis Seperti di PDF */
-.asset-badge {
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: var(--light-cream);
-    padding: 0.6rem 1.5rem;
-    border: 1px solid rgba(239, 230, 221, 0.6);
-    background-color: rgba(13, 13, 13, 0.75);
-    backdrop-filter: blur(4px);
-    transition: background-color 0.3s;
-}
-
-.asset-badge.highlight {
-    background-color: rgba(94, 25, 20, 0.85); /* Sentuhan Maroon Khusus */
-    border-color: var(--maroon);
-}
-
-.asset-card:hover .asset-badge {
-    background-color: var(--maroon);
-    border-color: var(--cream);
-    color: var(--light-cream);
+.asset-card:hover .asset-img {
+    transform: scale(1.03); /* Efek zoom-in halus saat pointer diarahkan */
 }
 
 .asset-card h3 {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--cream);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: 1px;
 }
 
 .asset-card p {
     font-size: 0.9rem;
     color: #CBB9A8;
+    line-height: 1.5;
     padding: 0 0.5rem;
 }
