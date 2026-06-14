@@ -5,183 +5,256 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alta Agency x Kedai Kita</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* CSS Dasar untuk memastikan tampilan rapi jika style.css belum lengkap */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #2b2323;
-            color: #f4f1ea;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #1a1515;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            border-bottom: 2px solid #d4af37;
-        }
-        header img {
-            height: 50px;
-            margin-right: 15px;
-        }
-        header h1 {
-            color: #d4af37;
-            margin: 0;
-            font-family: serif;
-        }
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background-image: linear-gradient(rgba(43, 35, 35, 0.8), rgba(43, 35, 35, 0.8)), url('Suasana Cafe Kedai Kita (1).jpeg');
-            background-size: cover;
-            background-position: center;
-        }
-        .hero h4 {
-            background-color: #d4af37;
-            color: #1a1515;
-            display: inline-block;
-            padding: 5px 15px;
-            letter-spacing: 2px;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-        .card {
-            background-color: #3b3131;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid #d4af37;
-        }
-        .image-gallery {
-            display: flex;
-            gap: 15px;
-            margin: 20px 0;
-            overflow-x: auto;
-        }
-        .image-gallery img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-        .contact-box {
-            background-color: #443737;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-        }
-        .capability-box {
-            background-color: #f4f1ea;
-            color: #2b2323;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-        h2, h3 {
-            color: #d4af37;
-            font-family: serif;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <img src="Logo Alta.jpeg" alt="Logo Alta Agency">
-        <h1>AltaAgency</h1>
+    <header class="navbar">
+        <div class="nav-container">
+            <!-- REVISI 3: Logo Alta Agency diubah menjadi Logo Kedai Kita -->
+            <a href="#home" class="logo-link">
+                <img src="Logo Kedai Kita.jpeg" alt="Logo Kedai Kita" class="nav-logo-img">
+            </a>
+            <nav class="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#agency">Agency</a>
+                <a href="#campaign">Campaign</a>
+                <a href="#assets">Assets</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="hero">
-        <h4>COZY CAFE X FASHION CONCEPT</h4>
-        <h1 style="font-size: 3em; margin: 10px 0;">Alta Agency</h1>
-        <p style="font-style: italic; font-size: 1.2em;">Where Warm Flavors Meet Elegant Textures</p>
-    </div>
-
-    <div class="container">
+    <main>
         
-        <h2>Profile</h2>
-        <div class="card">
-            <div class="image-gallery">
-                <img src="Suasana Cafe Kedai Kita (2).jpeg" alt="Suasana Cafe Kedai Kita">
-                <img src="Suasana Cafe Kedai Kita (3).jpeg" alt="Suasana Cafe Kedai Kita">
+        <section id="home" class="section-hero">
+            <div class="hero-content">
+                <div class="badge">Cozy Cafe x Fashion Concept</div>
+                <!-- REVISI 1: Tulisan Alta Agency diganti menjadi Kedai Kita -->
+                <h1>Kedai Kita</h1>
+                <p class="hero-tagline">Where Warm Flavors Meet Elegant Textures</p>
+                
+                <div class="profile-card">
+                    <h2>Profile</h2>
+                    <p>
+                        <strong>Kedai Kita Bintaro</strong> adalah restoran keluarga di kawasan Bintaro Jaya, Tangerang Selatan, yang menghadirkan pengalaman kuliner dengan suasana nyaman, hangat, dan modern. Menyajikan berbagai menu favorit seperti pizza kayu bakar dan mi hot plate, Kedai Kita Bintaro menjadi pilihan tepat untuk makan bersama keluarga, teman, maupun komunitas. Dengan konsep yang estetik dan ramah untuk berbagai aktivitas, kami berkomitmen menciptakan momen kebersamaan yang berkesan bagi setiap pengunjung.
+                    </p>
+                </div>
+
+                <div class="vision-mission-grid">
+                    <div class="vm-block vision">
+                        <h3>Visi</h3>
+                        <p>Menjadi restoran keluarga dan ruang berkumpul pilihan di Bintaro yang menghadirkan kuliner berkualitas, suasana nyaman, serta mendukung interaksi sosial dan gaya hidup modern.</p>
+                    </div>
+                    <div class="vm-block mission">
+                        <h3>Misi</h3>
+                        <ul>
+                            <li>Menyajikan makanan dan minuman berkualitas dengan cita rasa khas untuk semua kalangan.</li>
+                            <li>Menciptakan suasana yang nyaman, estetik, dan ramah bagi keluarga, teman, komunitas, serta generasi muda.</li>
+                            <li>Menjadi tempat berkumpul yang mempererat hubungan sosial dan menciptakan pengalaman yang berkesan bagi setiap pengunjung.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <p>Kedai Kita Bintaro adalah restoran keluarga di kawasan Bintaro Jaya, Tangerang Selatan, yang menghadirkan pengalaman kuliner dengan suasana nyaman, hangat, dan modern. Menyajikan berbagai menu favorit seperti pizza kayu bakar dan mi hot plate, Kedai Kita Bintaro menjadi pilihan tepat untuk makan bersama keluarga, teman, maupun komunitas. Dengan konsep yang estetik dan ramah untuk berbagai aktivitas, kami berkomitmen menciptakan momen kebersamaan yang berkesan bagi setiap pengunjung.</p>
+            
+            <div class="floating-accent pizza-icon">🍕</div>
+            <div class="floating-accent fashion-icon">✨</div>
+        </section>
+
+        <section id="agency" class="section-agency">
+            <div class="container">
+                <div class="section-header">
+                    <!-- REVISI 2: "Our Identity" diubah menjadi "In collaboration with" -->
+                    <span class="sub-title">In collaboration with</span>
+                    <h2>Alta Agency Capability</h2>
+                    <div class="line-accent"></div>
+                </div>
+
+                <div class="value-team-container">
+                    <h3 class="sub-section-title">Value Team</h3>
+                    <div class="value-grid">
+                        <div class="value-card">
+                            <div class="value-number">01</div>
+                            <h4>Profesional</h4>
+                            <p>Mengutamakan penyampaian kreatif namun diikuti dengan eksekusi jasa yang serius.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-number">02</div>
+                            <h4>Collaborative</h4>
+                            <p>Menjadi partner kerja yang responsive terhadap client atau pun audience secara transparan, adaptive, dan berempati.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-number">03</div>
+                            <h4>Fun</h4>
+                            <p>Bertemakan seru, menyenangkan, dan trendy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-container">
+                    <h3 class="sub-section-title">Our Services</h3>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <div class="service-icon-box">📢</div>
+                            <h4>Media Relations & Press Handling</h4>
+                            <p>Mengelola hubungan dengan media, membuat press release, dan memastikan brand selalu mendapat liputan positif.</p>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon-box">⚡</div>
+                            <h4>Creative Campaign Development</h4>
+                            <p>Merancang kampanye PR yang kreatif dan trendy, termasuk social media challenge, event tematik, atau kolaborasi dengan influencer.</p>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon-box">📖</div>
+                            <h4>Brand Storytelling & Content Creation</h4>
+                            <p>Membuat narasi brand yang kuat lewat artikel, video, konten, desain visual, dan storytelling yang relevan dengan audiens.</p>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon-box">🎉</div>
+                            <h4>Event Management & Activation</h4>
+                            <p>Menyelenggarakan event promosi, peluncuran produk, atau CSR dengan konsep yang fun dan engaging dan tentunya kreatif.</p>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon-box">🛡️</div>
+                            <h4>Crisis Communication & Reputation Management</h4>
+                            <p>Menangani isu atau krisis komunikasi dengan strategi yang cepat, transparan, dan menjaga reputasi brand tetap positif.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="campaign" class="section-campaign">
+            <div class="campaign-bg-graphics"></div>
+            <div class="container">
+                
+                <div class="campaign-hero-center">
+                    <div class="campaign-badge">Exclusive Project Collaboration</div>
+                    <h2 class="campaign-title">Show Your Style X Kedai Kita</h2>
+                    <p class="campaign-tagline">"Your Style, Your Story."</p>
+                </div>
+
+                <div class="campaign-explanation">
+                    <div class="explanation-inner">
+                        <h3>Tentang Kampanye</h3>
+                        <!-- REVISI 4: Penyesuaian Paragraf Kampanye -->
+                        <p>
+                            <strong>Show Your Style x Kedai Kita</strong> adalah kampanye media sosial yang mengajak pengunjung untuk mengekspresikan gaya dan kepercayaan diri mereka, tidak hanya saat berkunjung ke Kedai Kita Bintaro, tetapi juga di kehidupan sehari-hari mereka. Kampanye ini ditujukan khususnya bagi Generasi Z dan Milenial yang aktif menggunakan media sosial untuk selalu berani dan pede di mana pun berada.
+                        </p>
+                        <p>
+                            Peserta cukup mengunggah foto atau video OOTD (Outfit of The Day) di Instagram Story, kemudian menandai akun Instagram resmi Kedai Kita Bintaro dan menggunakan hashtag kampanye yang telah ditentukan. Melalui partisipasi ini, pengunjung turut menciptakan konten yang membantu memperluas jangkauan promosi Kedai Kita Bintaro secara organik.
+                        </p>
+                        <p>
+                            Kampanye ini bertujuan untuk meningkatkan brand awareness, memperkuat engagement pelanggan, serta memperkenalkan Kedai Kita Bintaro sebagai destinasi kuliner yang nyaman, estetik, dan dekat dengan gaya hidup anak muda. 
+                        </p>
+                        <p>
+                            Dengan menggabungkan unsur fashion, media sosial, dan pengalaman kuliner, kampanye ini ingin menekankan bahwa setiap orang bisa tampil percaya diri kapan pun dan di mana pun. Dan Kedai Kita Bintaro, dengan suasananya yang estetik, dapat menjadi salah satu wadah yang tepat untuk merayakan kebebasan berekspresi tersebut.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="campaign-objectives">
+                    <h3 class="objectives-title-main">Campaign Objective</h3>
+                    <div class="objectives-row">
+                        <div class="objective-card">
+                            <div class="obj-header">
+                                <span class="obj-type">A</span>
+                                <h4>Informational Objectives</h4>
+                            </div>
+                            <!-- REVISI 5A -->
+                            <p>Meningkatkan brand awareness Kedai Kita Bintaro di kalangan perempuan Generasi Z dan Milenial sebagai restoran dengan kuliner berkualitas, suasana nyaman, estetik, dan cocok untuk bersosialisasi serta berbagi momen di media sosial. Selain itu, kampanye ini juga bertujuan untuk membangun awareness positif mengenai pentingnya berpakaian sebagai bentuk ekspresi diri.</p>
+                        </div>
+
+                        <div class="objective-card">
+                            <div class="obj-header">
+                                <span class="obj-type">B</span>
+                                <h4>Motivational Objectives</h4>
+                            </div>
+                            <!-- REVISI 5B -->
+                            <p>Mendorong pengunjung untuk berpartisipasi dalam kampanye dengan mengunggah OOTD di Instagram Story, menandai akun Kedai Kita Bintaro, dan menggunakan hashtag kampanye. Kampanye ini juga hadir untuk mengajak serta memberikan motivasi kepada audiens agar lebih percaya diri dengan OOTD dan gaya personal mereka sehari-hari.</p>
+                        </div>
+
+                        <div class="objective-card">
+                            <div class="obj-header">
+                                <span class="obj-type">C</span>
+                                <h4>Measurable Objectives</h4>
+                            </div>
+                            <!-- REVISI 5C -->
+                            <p>Menargetkan 10–15 peserta sesuai target audiens serta meningkatkan interaksi dan eksposur Kedai Kita Bintaro di media sosial. Keberhasilan diukur melalui jumlah peserta, tingkat partisipasi, dan engagement yang dihasilkan. Selain itu, parameter kesuksesan juga akan dinilai dari tingkat kepuasan peserta mengenai kampanye ini yang tercermin melalui feedback positif.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TAMBAHAN: Bagian untuk menampilkan Asset (Factsheet, Brosur, Poster) -->
+        <section id="assets" class="section-assets">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Project Materials</span>
+                    <h2>Campaign Assets</h2>
+                    <div class="line-accent"></div>
+                </div>
+                <div class="assets-grid">
+                    <div class="asset-item">
+                        <img src="Factsheet.jpeg" alt="Factsheet Kedai Kita">
+                        <h4>Factsheet</h4>
+                    </div>
+                    <div class="asset-item">
+                        <img src="Brosur (1).jpeg" alt="Brosur Kedai Kita 1">
+                        <h4>Brosur 1</h4>
+                    </div>
+                    <div class="asset-item">
+                        <img src="Brosur (2).jpeg" alt="Brosur Kedai Kita 2">
+                        <h4>Brosur 2</h4>
+                    </div>
+                    <div class="asset-item">
+                        <img src="Poster.jpeg" alt="Poster Kampanye">
+                        <h4>Poster</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-contact">
+            <div class="container">
+                <div class="contact-box">
+                    <div class="contact-info-side">
+                        <!-- REVISI 6: Judul diubah menjadi Contact Us -->
+                        <h2>Contact Us</h2>
+                        <p>Punya pertanyaan seputar kolaborasi atau ingin tahu lebih lanjut mengenai project Alta Agency x Kedai Kita Bintaro? Hubungi kami langsung melalui official channel di bawah ini.</p>
+                        <div class="line-accent-light"></div>
+                    </div>
+                    <div class="contact-links-side">
+                        <div class="contact-item-link">
+                            <span class="icon">📸</span>
+                            <div class="detail">
+                                <label>Instagram</label>
+                                <a href="https://instagram.com/kedaikitabintaro" target="_blank">@kedaikitabintaro</a>
+                            </div>
+                        </div>
+                        <div class="contact-item-link">
+                            <span class="icon">📞</span>
+                            <div class="detail">
+                                <label>WhatsApp / HotLine</label>
+                                <a href="tel:085176719901">085176719901</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container text-center" style="padding: 10px 0;">
+            <p>&copy; 2026 Alta Agency x Kedai Kita Bintaro. All Rights Reserved.</p>
         </div>
-
-        <h2>Visi</h2>
-        <div class="card">
-            <p>Menjadi restoran keluarga dan ruang berkumpul pilihan di Bintaro yang menghadirkan kuliner berkualitas, suasana nyaman, serta mendukung interaksi sosial dan gaya hidup modern.</p>
-        </div>
-
-        <hr style="border-color: #d4af37; margin: 40px 0;">
-
-        <div style="text-align: center;">
-            <img src="Poster.jpeg" alt="Poster Kampanye" style="max-width: 100%; border-radius: 8px; margin-bottom: 20px;">
-            <h2>Show Your Style x Kedai Kita</h2>
-            <p style="color: #d4af37; font-style: italic; font-size: 1.2em;">"Your Style, Your Story."</p>
-        </div>
-
-        <h2>Tentang Kampanye</h2>
-        <p>Show Your Style x Kedai Kita adalah kampanye media sosial yang mengajak pengunjung untuk mengekspresikan gaya dan kepercayaan diri mereka saat berkunjung ke Kedai Kita Bintaro. Kampanye ini ditujukan khususnya bagi Generasi Z dan Milenial yang aktif menggunakan media sosial.</p>
-        <p>Peserta cukup mengunggah foto atau video OOTD (Outfit of The Day) di Instagram Story, kemudian menandai akun Instagram resmi Kedai Kita Bintaro dan menggunakan hashtag kampanye yang telah ditentukan. Melalui partisipasi ini, pengunjung turut menciptakan konten yang membantu memperluas jangkauan promosi Kedai Kita Bintaro secara organik.</p>
-        <p>Kampanye ini bertujuan untuk meningkatkan brand awareness, memperkuat engagement pelanggan, serta memperkenalkan Kedai Kita Bintaro sebagai destinasi kuliner yang nyaman, estetik, dan dekat dengan gaya hidup anak muda. Selain itu, peserta dengan unggahan paling kreatif berkesempatan mendapatkan hadiah atau voucher menarik dari Kedai Kita Bintaro.</p>
-        <p>Dengan menggabungkan unsur fashion, media sosial, dan pengalaman kuliner, Show Your Style x Kedai Kita hadir untuk menciptakan pengalaman yang seru, interaktif, dan berkesan bagi setiap pengunjung.</p>
-
-        <h2 style="text-align: center; margin-top: 40px;">Campaign Objective</h2>
-        
-        <div class="card">
-            <h3 style="margin-top: 0;">A. Informational Objectives</h3>
-            <p>Meningkatkan brand awareness Kedai Kita Bintaro di kalangan perempuan Generasi Z dan Milenial sebagai restoran dengan kuliner berkualitas, suasana nyaman, estetik, dan cocok untuk bersosialisasi serta berbagi momen di media sosial.</p>
-        </div>
-
-        <div class="card">
-            <h3 style="margin-top: 0;">B. Motivational Objectives</h3>
-            <p>Mendorong pengunjung untuk berpartisipasi dalam kampanye dengan mengunggah OOTD di Instagram Story, menandai akun Kedai Kita Bintaro, dan menggunakan hashtag kampanye. Selain itu, kampanye ini bertujuan meningkatkan kepercayaan diri audiens dalam mengekspresikan gaya personal mereka.</p>
-        </div>
-
-        <div class="card">
-            <h3 style="margin-top: 0;">C. Measurable Objectives</h3>
-            <p>Menargetkan 10-15 peserta sesuai target audiens serta meningkatkan interaksi dan eksposur Kedai Kita Bintaro di media sosial. Keberhasilan kampanye diukur melalui jumlah peserta, tingkat partisipasi, dan engagement yang dihasilkan selama kampanye berlangsung.</p>
-        </div>
-
-        <hr style="border-color: #d4af37; margin: 40px 0;">
-
-        <h4 style="text-align: center; letter-spacing: 2px;">OUR IDENTITY</h4>
-        <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">Alta Agency Capability</h2>
-        
-        <div class="capability-box">
-            <h3 style="color: #ccc; margin: 0; font-size: 1.5em;">01</h3>
-            <h3 style="color: #2b2323;">Profesional</h3>
-            <p>Mengutamakan penyampaian kreatif namun diikuti dengan eksekusi jasa yang serius.</p>
-        </div>
-        
-        <div class="capability-box">
-            <h3 style="color: #ccc; margin: 0; font-size: 1.5em;">02</h3>
-            <h3 style="color: #2b2323;">Collaborative</h3>
-            <p>Menjadi partner kerja yang responsive terhadap client atau pun audience secara transparan, adaptive, dan berempati.</p>
-        </div>
-
-        <div class="capability-box">
-            <h3 style="color: #ccc; margin: 0; font-size: 1.5em;">03</h3>
-            <h3 style="color: #2b2323;">Fun</h3>
-            <p>Menciptakan lingkungan kerja dan hasil kampanye yang menyenangkan serta relevan dengan target audiens.</p>
-        </div>
-
-        <h2 style="text-align: center; margin-top: 50px;">Let's Collaborate</h2>
-        <div class="contact-box">
-            <h3 style="margin: 0; color: white;">INSTAGRAM: @kedaikitabintaro</h3>
-        </div>
-        <div class="contact-box">
-            <h3 style="margin: 0; color: white;">WHATSAPP / HOTLINE: 085176719901</h3>
-        </div>
-
-    </div>
+    </footer>
 
 </body>
 </html>
