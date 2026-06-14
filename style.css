@@ -55,10 +55,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0; /* Padding disesuaikan agar logo pas */
+    padding: 10px 0;
 }
 
-/* Styling logo baru */
 .logo-link {
     display: flex;
     align-items: center;
@@ -66,9 +65,9 @@ body {
 }
 
 .nav-logo-img {
-    height: 45px; /* Sesuaikan ukuran logo */
+    height: 45px;
     width: auto;
-    border-radius: 4px; /* Opsional: memberi sedikit lengkungan jika logo kotak tajam */
+    border-radius: 4px;
 }
 
 .nav-menu a {
@@ -98,7 +97,7 @@ body {
     align-items: center;
     text-align: center;
     background: linear-gradient(135deg, rgba(26,26,26,0.93) 0%, rgba(62,39,35,0.88) 100%), 
-                url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1920&q=80');
+                url('Suasana Cafe Kedai Kita (1).jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -175,17 +174,33 @@ body {
     line-height: 1.8;
 }
 
+/* Gallery inside Profile */
+.image-gallery {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+    overflow-x: auto;
+}
+
+.image-gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 220px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
 /* Visi Misi Grid */
 .vision-mission-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 25px;
     text-align: left;
 }
 
 .vm-block {
     background-color: rgba(62, 39, 35, 0.85);
-    border-left: 3px solid var(--accent-gold);
     padding: 30px;
     border-radius: 4px;
     border: 1px solid rgba(215, 204, 200, 0.1);
@@ -199,17 +214,9 @@ body {
     margin-bottom: 15px;
 }
 
-.vm-block p, .vm-block ul {
-    font-size: 14px;
+.vm-block p {
+    font-size: 15px;
     color: #E0D7D5;
-}
-
-.vm-block ul {
-    padding-left: 18px;
-}
-
-.vm-block ul li {
-    margin-bottom: 10px;
 }
 
 /* Floating Aesthetic Accents */
@@ -256,23 +263,11 @@ body {
     margin: 15px auto 0;
 }
 
-.sub-section-title {
-    font-family: var(--font-heading);
-    font-size: 26px;
-    color: var(--dark-brown);
-    margin-bottom: 35px;
-    border-bottom: 2px solid var(--nude);
-    padding-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Value Team */
+/* Value Team Grid */
 .value-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-bottom: 70px;
 }
 
 .value-card {
@@ -300,38 +295,6 @@ body {
     font-family: var(--font-heading);
     font-size: 22px;
     color: var(--black);
-    margin-bottom: 12px;
-}
-
-/* Our Services */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
-
-.service-item {
-    background-color: var(--soft-nude);
-    padding: 35px;
-    border-radius: 4px;
-    border: 1px solid rgba(62, 39, 35, 0.06);
-    transition: all 0.3s ease;
-}
-
-.service-item:hover {
-    background-color: var(--white);
-    border-color: var(--accent-gold);
-}
-
-.service-icon-box {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.service-item h4 {
-    font-family: var(--font-heading);
-    font-size: 20px;
-    color: var(--dark-brown);
     margin-bottom: 12px;
 }
 
@@ -366,6 +329,7 @@ body {
     letter-spacing: 4px;
     color: var(--nude);
     margin-bottom: 12px;
+    display: block;
 }
 
 .campaign-title {
@@ -464,7 +428,7 @@ body {
     line-height: 1.6;
 }
 
-/* SECTION 4: ASSETS GALLERY (BARU) */
+/* SECTION 4: ASSETS GALLERY */
 .section-assets {
     background-color: var(--soft-nude);
     color: var(--black);
@@ -498,7 +462,7 @@ body {
     margin-bottom: 15px;
     object-fit: contain;
     border: 1px solid rgba(0,0,0,0.03);
-    max-height: 350px;
+    max-height: 380px; /* Memastikan rasio vertikal poster/brosur pas */
 }
 
 .asset-item h4 {
@@ -506,7 +470,6 @@ body {
     color: var(--dark-brown);
     font-size: 20px;
 }
-
 
 /* SECTION 5: CONTACT US */
 .section-contact {
@@ -579,7 +542,6 @@ body {
     color: var(--accent-gold);
 }
 
-
 /* FOOTER */
 footer {
     background-color: var(--black);
@@ -593,11 +555,13 @@ footer {
     text-align: center;
 }
 
-
 /* RESPONSIVE LAYOUT */
 @media (max-width: 992px) {
-    .value-grid, .objectives-row, .services-grid, .contact-box, .vision-mission-grid {
+    .value-grid, .objectives-row, .contact-box {
         grid-template-columns: 1fr;
+    }
+    .contact-box {
+        padding: 40px 20px;
     }
 }
 
@@ -605,5 +569,4 @@ footer {
     .section-hero h1 { font-size: 42px; }
     .campaign-title { font-size: 32px; }
     .nav-menu { display: none; } 
-    .nav-logo-img { height: 35px; } /* Memperkecil logo di mobile */
 }
